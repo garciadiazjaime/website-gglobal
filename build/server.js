@@ -16,5 +16,14 @@ app.get('/nuestra-filosofia', function (req, res) {
   res.sendFile(appDir + '/views/aboutus.html');
 });
 
-app.listen(3030);
-console.log("Running at Port 3030");
+app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3030);
+
+var server = app.listen(app.get('port'), app.get('ipaddress'), err => {
+  if (err) {
+    console.log(err);
+  }
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Example app listening at http://%s:%s', host, port);
+});

@@ -2,12 +2,13 @@
   "name": "website-gglobal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run webpack && npm run nodemon",
     "nodemon": "nodemon build/server.js",
-    "webpack": "babel src -d build -w"
+    "webpack": "babel src -d build -w",
+    "start":"node build/server.js"
   },
   "keywords": [],
   "author": "",
