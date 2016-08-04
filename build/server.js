@@ -16,8 +16,8 @@ app.get('/nuestra-filosofia', function (req, res) {
   res.sendFile(appDir + '/views/aboutus.html');
 });
 
-app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3030);
+app.set('ipaddress', process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3030);
 
 var server = app.listen(app.get('port'), app.get('ipaddress'), err => {
   if (err) {
