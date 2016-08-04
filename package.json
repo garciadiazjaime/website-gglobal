@@ -1,0 +1,21 @@
+{
+  "name": "website-gglobal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run webpack && npm run nodemon",
+    "nodemon": "nodemon build/server.js",
+    "webpack": "babel src -d build -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.11.4",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.0"
+  }
+}
